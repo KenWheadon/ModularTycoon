@@ -1,5 +1,13 @@
 // Game Configuration
 const GAME_CONFIG = {
+  MODULES: {
+    CRYPTO: "crypto",
+    ARCADE: "arcade",
+    BURGER: "burger",
+    COW: "cow",
+    BAKERY: "bakery",
+    NFT: "nft",
+  },
   // Currency settings
   CURRENCIES: {
     DUCKCOIN: "duckcoin",

@@ -43,12 +43,12 @@ window.onload = function () {
   moduleManager = game.moduleManager;
 
   // Get module references for global access
-  cryptoModule = moduleManager.getModule("crypto");
-  arcadeModule = moduleManager.getModule("arcade");
-  burgerModule = moduleManager.getModule("burger");
-  cowModule = moduleManager.getModule("cows");
-  bakeryModule = moduleManager.getModule("bakery");
-  nftModule = moduleManager.getModule("nft");
+  cryptoModule = moduleManager.getModule(GAME_CONFIG.MODULES.CRYPTO);
+  arcadeModule = moduleManager.getModule(GAME_CONFIG.MODULES.ARCADE);
+  burgerModule = moduleManager.getModule(GAME_CONFIG.MODULES.BURGER);
+  cowModule = moduleManager.getModule(GAME_CONFIG.MODULES.COWS);
+  bakeryModule = moduleManager.getModule(GAME_CONFIG.MODULES.BAKERY);
+  nftModule = moduleManager.getModule(GAME_CONFIG.MODULES.NFT);
 
   // Make game accessible globally
   window.game = game;

@@ -1,7 +1,7 @@
 // Crypto Mining Module
 class CryptoMiningModule extends GameModule {
   constructor() {
-    super("crypto", "Crypto Mining", "💧", null);
+    super(GAME_CONFIG.MODULES.CRYPTO, "Crypto Mining", "💧", null);
 
     const config = GAME_CONFIG.CRYPTO_MINING;
     this.dripsPerTap = config.INITIAL_DRIPS_PER_TAP;

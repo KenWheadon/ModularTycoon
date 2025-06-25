@@ -1,7 +1,7 @@
 // Bakery Module
 class BakeryModule extends GameModule {
   constructor() {
-    super("bakery", "Bakery Shop", "🥖", {
+    super(GAME_CONFIG.MODULES.BAKERY, "Bakery Shop", "🥖", {
       cost: GAME_CONFIG.MODULE_UNLOCKS.BAKERY,
       description: "Unlock bakery for $500",
     });

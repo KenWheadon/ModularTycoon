@@ -1,7 +1,7 @@
 // Arcade Repair Module
 class ArcadeRepairModule extends GameModule {
   constructor() {
-    super("arcade", "Arcade Repair", "🕹️", {
+    super(GAME_CONFIG.MODULES.ARCADE, "Arcade Repair", "🕹️", {
       cost: GAME_CONFIG.MODULE_UNLOCKS.ARCADE,
       description: "Unlock arcade repair shop for $50",
     });
