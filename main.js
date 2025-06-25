@@ -28,7 +28,7 @@ function showNotification(message) {
 }
 
 // Global variables for module access
-let game, cryptoModule, arcadeModule, bakeryModule, moduleManager;
+let game, cryptoModule, arcadeModule, burgerModule, bakeryModule, moduleManager;
 
 // Initialize game when page loads
 window.onload = function () {
@@ -39,6 +39,7 @@ window.onload = function () {
   // Get module references for global access
   cryptoModule = moduleManager.getModule("crypto");
   arcadeModule = moduleManager.getModule("arcade");
+  burgerModule = moduleManager.getModule("burger");
   bakeryModule = moduleManager.getModule("bakery");
 
   // Make game accessible globally
@@ -46,6 +47,7 @@ window.onload = function () {
   window.moduleManager = moduleManager;
   window.cryptoModule = cryptoModule;
   window.arcadeModule = arcadeModule;
+  window.burgerModule = burgerModule;
   window.bakeryModule = bakeryModule;
   window.showNotification = showNotification;
 

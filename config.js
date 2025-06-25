@@ -55,6 +55,7 @@ const GAME_CONFIG = {
   MODULE_UNLOCKS: {
     CRYPTO: null, // Always unlocked
     ARCADE: { dollars: 50 },
+    BURGER: { dollars: 200 },
     BAKERY: { dollars: 500 },
   },
 

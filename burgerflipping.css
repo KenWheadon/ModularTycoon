@@ -1,0 +1,375 @@
+/* Burger Flipping Module Styles */
+
+/* Inventory Section */
+.burger-inventory {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 165, 0, 0.1);
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+}
+
+.burger-inventory h3 {
+    color: #ffa500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.inventory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.inventory-item button {
+    background: #ffa500;
+    color: #1a1a2e;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.inventory-item button:hover {
+    background: #ff8c00;
+}
+
+.inventory-item button:disabled {
+    background: #666;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Kitchen Section */
+.burger-kitchen {
+    margin-bottom: 20px;
+}
+
+.burger-kitchen h3 {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.burger-kitchen h4 {
+    color: #ffd93d;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/* Prep Station */
+.prep-station {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(100, 200, 100, 0.1);
+    border: 1px solid #64c864;
+    border-radius: 5px;
+}
+
+.start-shaping-btn {
+    background: #64c864;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.start-shaping-btn:hover {
+    background: #50a050;
+}
+
+.start-shaping-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.raw-meat-queue {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.empty-queue {
+    opacity: 0.6;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Shaping Meat */
+.shaping-meat {
+    background: rgba(139, 69, 19, 0.3);
+    border: 2px solid #8b4513;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 150px;
+}
+
+.shaping-meat.active {
+    animation: shapingPulse 1s infinite;
+    border-color: #ffd93d;
+}
+
+.shaping-meat:hover {
+    background: rgba(139, 69, 19, 0.5);
+    transform: scale(1.02);
+}
+
+@keyframes shapingPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 215, 61, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 215, 61, 0.8);
+    }
+}
+
+.meat-progress {
+    background: rgba(0, 0, 0, 0.3);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.shape-instruction {
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.shaped-meat {
+    background: rgba(0, 255, 0, 0.2);
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #00ff9f;
+}
+
+/* Grill Station */
+.grill-station {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(255, 100, 100, 0.1);
+    border: 1px solid #ff6464;
+    border-radius: 5px;
+}
+
+.add-to-grill-btn {
+    background: #ff6464;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.add-to-grill-btn:hover {
+    background: #ff5050;
+}
+
+.add-to-grill-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.grill-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.empty-grill {
+    opacity: 0.6;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    grid-column: 1 / -1;
+}
+
+/* Cooking Patties */
+.cooking-patty {
+    background: rgba(139, 69, 19, 0.3);
+    border: 2px solid #8b4513;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.cooking-patty.cooking {
+    border-color: #ffa500;
+}
+
+.cooking-patty.ready-to-flip {
+    border-color: #ffd93d;
+    animation: readyToCook 1s infinite;
+    background: rgba(255, 215, 61, 0.2);
+}
+
+.cooking-patty.perfect {
+    border-color: #00ff9f;
+    background: rgba(0, 255, 159, 0.2);
+}
+
+.cooking-patty.burned {
+    border-color: #ff0000;
+    background: rgba(255, 0, 0, 0.2);
+}
+
+@keyframes readyToCook {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 215, 61, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 61, 1);
+    }
+}
+
+.cooking-patty:hover {
+    transform: scale(1.05);
+}
+
+.patty-visual {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.cook-progress {
+    background: rgba(0, 0, 0, 0.3);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.cooking-patty.cooking .progress-bar {
+    background: linear-gradient(90deg, #ff6b6b, #ffa500);
+}
+
+.cooking-patty.ready-to-flip .progress-bar {
+    background: linear-gradient(90deg, #ffa500, #ffd93d);
+}
+
+.cooking-patty.perfect .progress-bar {
+    background: #00ff9f;
+}
+
+.cooking-patty.burned .progress-bar {
+    background: #ff0000;
+}
+
+.patty-status {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Assembly Station */
+.assembly-station {
+    padding: 12px;
+    background: rgba(100, 100, 255, 0.1);
+    border: 1px solid #6464ff;
+    border-radius: 5px;
+}
+
+.make-burger-btn {
+    background: #6464ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.make-burger-btn:hover {
+    background: #5050ff;
+}
+
+.make-burger-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.burger-status {
+    font-size: 0.9em;
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .inventory-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .inventory-item {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .grill-area {
+        grid-template-columns: 1fr;
+    }
+    
+    .raw-meat-queue {
+        flex-direction: column;
+    }
+    
+    .shaping-meat {
+        min-width: auto;
+    }
+}
+
+/* Special Effects */
+.burger-success {
+    animation: burgerSuccess 0.8s ease-out;
+}
+
+@keyframes burgerSuccess {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        background: rgba(0, 255, 159, 0.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
