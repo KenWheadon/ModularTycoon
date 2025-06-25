@@ -15,7 +15,7 @@ class ModuleManager {
     // Module 2: Arcade Repair
     this.modules.push(new ArcadeRepairModule());
 
-    // Module 3: Bakery (placeholder)
+    // Module 3: Bakery
     this.modules.push(new BakeryModule());
   }
 
@@ -97,7 +97,9 @@ class GameModule {
                     : "Requirements not met"
                 }</p>
                 <button class="unlock-button" 
-                        onclick="this.handleUnlock('${this.id}')"
+                        onclick="window.moduleManager.handleUnlock('${
+                          this.id
+                        }', '${this.name}')"
                         ${canUnlock ? "" : "disabled"}>
                     Unlock Module
                 </button>
@@ -105,16 +107,16 @@ class GameModule {
         `;
   }
 
-  // Handle module unlock
-  handleUnlock(moduleId) {
-    if (window.moduleManager && window.moduleManager.unlockModule(moduleId)) {
-      window.showNotification(`${this.name} module unlocked!`);
-      window.game.render();
-    }
-  }
-
   // Abstract method - must be implemented by subclasses
   renderContent(moduleManager) {
     throw new Error("renderContent must be implemented by subclass");
   }
 }
+
+// Global function to handle module unlocking
+ModuleManager.prototype.handleUnlock = function (moduleId, moduleName) {
+  if (this.unlockModule(moduleId)) {
+    window.showNotification(`${moduleName} module unlocked!`);
+    window.game.render();
+  }
+};

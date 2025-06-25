@@ -277,31 +277,3 @@ class ArcadeRepairModule extends GameModule {
     }
   }
 }
-
-// Bakery Module (Placeholder)
-class BakeryModule extends GameModule {
-  constructor() {
-    super("bakery", "Bakery Shop", "🥖", {
-      cost: GAME_CONFIG.MODULE_UNLOCKS.BAKERY,
-      description: "Unlock bakery for $500",
-    });
-  }
-
-  renderContent(moduleManager) {
-    return `
-            <h2>${this.icon} ${this.name}</h2>
-            <div class="module-stats">
-                <div class="stat">
-                    <div class="stat-label">Coming Soon</div>
-                    <div class="stat-value">🚧</div>
-                </div>
-            </div>
-            
-            <div class="action-area">
-                <p style="text-align: center; opacity: 0.7;">
-                    Food prep mini-game coming in next update!
-                </p>
-            </div>
-        `;
-  }
-}
