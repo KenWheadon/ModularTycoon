@@ -1,0 +1,230 @@
+/* Arcade Repair Module Styles */
+
+/* Sale Slots Grid */
+.sale-slots-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Machine Slot Styles */
+.machine-slot {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ffd93d;
+  border-radius: 5px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  transition: all 0.3s ease;
+}
+
+.machine-slot:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.machine-slot.empty {
+  border-style: dashed;
+  opacity: 0.6;
+  justify-content: center;
+}
+
+.machine-slot.occupied {
+  border-color: #00ff9f;
+  background: rgba(0, 255, 159, 0.05);
+}
+
+/* Machine Info */
+.machine-info {
+  flex: 1;
+}
+
+.machine-info > div:first-child {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.machine-investment {
+  font-size: 0.8em;
+  opacity: 0.8;
+  color: #ffd93d;
+}
+
+/* Empty Slot */
+.empty-slot-text {
+  opacity: 0.5;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Offer Section */
+.offer-section {
+  text-align: center;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.offer-amount {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  text-shadow: 0 0 5px currentColor;
+}
+
+.offer-status {
+  margin-bottom: 8px;
+  font-size: 0.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Offer Buttons */
+.offer-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.accept-btn,
+.reject-btn {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.accept-btn {
+  background: #00ff9f;
+  color: #1a1a2e;
+}
+
+.accept-btn:hover {
+  background: #00e68a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 255, 159, 0.3);
+}
+
+.reject-btn {
+  background: #ff6b6b;
+  color: white;
+}
+
+.reject-btn:hover {
+  background: #ff5252;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* Waiting for Offer */
+.waiting-offer {
+  flex: 1;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.waiting-text {
+  opacity: 0.6;
+  font-style: italic;
+  animation: waitingPulse 2s infinite;
+}
+
+@keyframes waitingPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* Arcade Module Specific Stats */
+.arcade-stats {
+  background: rgba(255, 215, 61, 0.1);
+  border: 1px solid #ffd93d;
+}
+
+/* Arcade Upgrades */
+.arcade-upgrades .upgrade {
+  background: rgba(255, 215, 61, 0.1);
+  border-color: #ffd93d;
+}
+
+.arcade-upgrades .upgrade button {
+  background: #ffd93d;
+  color: #1a1a2e;
+}
+
+.arcade-upgrades .upgrade button:hover {
+  background: #ffcd00;
+}
+
+/* Profit/Loss Color Classes */
+.profit {
+  color: #00ff9f !important;
+  text-shadow: 0 0 10px #00ff9f;
+}
+
+.loss {
+  color: #ff6b6b !important;
+  text-shadow: 0 0 10px #ff6b6b;
+}
+
+.break-even {
+  color: #ffd93d !important;
+  text-shadow: 0 0 10px #ffd93d;
+}
+
+/* Machine Slot Animation on Offer */
+.machine-slot.has-offer {
+  animation: newOfferGlow 1s ease-out;
+  border-color: #00ff9f;
+}
+
+@keyframes newOfferGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 255, 159, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 159, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 255, 159, 0.3);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .machine-slot {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+    gap: 10px;
+  }
+
+  .offer-section {
+    padding: 0;
+  }
+
+  .machine-info {
+    text-align: center;
+  }
+
+  .offer-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .accept-btn,
+  .reject-btn {
+    flex: 1;
+    max-width: 100px;
+  }
+}

@@ -1,0 +1,207 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #00ff9f;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Game Header */
+.game-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.game-header h1 {
+  color: #ffd93d;
+  text-shadow: 0 0 20px #ffd93d;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+/* Modules Container */
+.modules-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Module Base Styles */
+.module {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #00ff9f;
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.module.locked {
+  border-color: #666;
+  opacity: 0.6;
+  position: relative;
+}
+
+.module.locked::after {
+  content: "🔒 LOCKED";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+.module h2 {
+  color: #ff6b6b;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 0 10px #ff6b6b;
+  font-size: 1.5em;
+}
+
+/* Module Stats */
+.module-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(0, 255, 159, 0.1);
+  border-radius: 5px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.stat-value {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffd93d;
+}
+
+/* Action Area */
+.action-area {
+  margin-bottom: 20px;
+}
+
+/* Upgrades */
+.upgrades {
+  display: grid;
+  gap: 8px;
+}
+
+.upgrade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 5px;
+  border: 1px solid #ff6b6b;
+  font-size: 0.9em;
+}
+
+.upgrade button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9em;
+  transition: background 0.2s;
+}
+
+.upgrade button:hover {
+  background: #ff5252;
+}
+
+.upgrade button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+/* Notifications */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #00ff9f;
+  color: #1a1a2e;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 1000;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animations */
+.drip-animation {
+  position: fixed;
+  pointer-events: none;
+  font-weight: bold;
+  color: #4facfe;
+  z-index: 1000;
+  animation: dripFloat 1s ease-out forwards;
+}
+
+@keyframes dripFloat {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modules-container {
+    grid-template-columns: 1fr;
+  }
+
+  .game-header h1 {
+    font-size: 2em;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .module {
+    padding: 15px;
+  }
+}

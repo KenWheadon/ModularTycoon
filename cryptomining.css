@@ -1,0 +1,152 @@
+/* Crypto Mining Module Styles */
+
+/* Tap Container */
+.tap-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Tap Buttons */
+.tap {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(145deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.1s;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.tap:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+}
+
+.tap:active {
+  transform: scale(0.95);
+}
+
+.tap:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+/* Tap Cooldown Indicator */
+.tap-cooldown {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #ff4757;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  animation: countdownPulse 1s infinite;
+}
+
+@keyframes countdownPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Tap Effects */
+.tap::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.tap:active::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Crypto Module Specific Stats */
+.crypto-stats {
+  background: rgba(79, 172, 254, 0.1);
+  border: 1px solid #4facfe;
+}
+
+/* Crypto Upgrades */
+.crypto-upgrades .upgrade {
+  background: rgba(79, 172, 254, 0.1);
+  border-color: #4facfe;
+}
+
+.crypto-upgrades .upgrade button {
+  background: #4facfe;
+  color: white;
+}
+
+.crypto-upgrades .upgrade button:hover {
+  background: #3e8dfe;
+}
+
+/* Drip Animation Specific to Crypto */
+.crypto-drip-animation {
+  color: #4facfe;
+  text-shadow: 0 0 10px #4facfe;
+  font-size: 1.2em;
+}
+
+/* Responsive Tap Design */
+@media (max-width: 768px) {
+  .tap {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .tap-cooldown {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+
+  .tap-container {
+    gap: 10px;
+  }
+}
+
+/* Tap Glow Effect for Active State */
+.tap.active {
+  animation: tapGlow 0.5s ease-out;
+}
+
+@keyframes tapGlow {
+  0% {
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(79, 172, 254, 0.8);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+  }
+}

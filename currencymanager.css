@@ -1,0 +1,129 @@
+/* Currency Display Styles */
+.currency-display {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.currency {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #00ff9f;
+  text-align: center;
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.currency:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 159, 0.3);
+}
+
+.currency-name {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.currency-value {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffd93d;
+  text-shadow: 0 0 10px #ffd93d;
+}
+
+/* Exchange Rate Styling */
+.exchange-rate {
+  background: rgba(255, 107, 107, 0.2);
+  border-color: #ff6b6b;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+}
+
+/* Currency Converter Styles */
+.converter {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 215, 61, 0.1);
+  border-radius: 5px;
+  border: 1px solid #ffd93d;
+  margin-bottom: 15px;
+}
+
+.converter input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #00ff9f;
+  color: #00ff9f;
+  padding: 8px;
+  border-radius: 3px;
+  width: 100px;
+  text-align: center;
+  font-family: inherit;
+  margin: 0 5px;
+  transition: all 0.2s;
+}
+
+.converter input:focus {
+  outline: none;
+  border-color: #ffd93d;
+  box-shadow: 0 0 5px rgba(255, 215, 61, 0.3);
+}
+
+.converter button {
+  background: #ffd93d;
+  color: #1a1a2e;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: all 0.2s;
+}
+
+.converter button:hover {
+  background: #ffcd00;
+  transform: translateY(-1px);
+}
+
+.converter button:disabled {
+  background: #666;
+  color: #999;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Currency Display */
+@media (max-width: 768px) {
+  .currency-display {
+    gap: 15px;
+  }
+
+  .currency {
+    min-width: 100px;
+    padding: 8px 15px;
+  }
+
+  .currency-value {
+    font-size: 1.3em;
+  }
+
+  .converter input {
+    width: 80px;
+  }
+}
