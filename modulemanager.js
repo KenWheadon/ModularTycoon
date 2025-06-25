@@ -18,8 +18,14 @@ class ModuleManager {
     // Module 3: Burger Flipping
     this.modules.push(new BurgerFlippingModule());
 
-    // Module 4: Bakery (placeholder)
+    // Module 4: Cow Farm
+    this.modules.push(new CowFarmModule());
+
+    // Module 5: Bakery
     this.modules.push(new BakeryModule());
+
+    // Module 5: Bakery
+    this.modules.push(new NFTCardsModule());
   }
 
   // Check if module is unlocked

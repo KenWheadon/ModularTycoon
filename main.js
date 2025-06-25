@@ -28,7 +28,13 @@ function showNotification(message) {
 }
 
 // Global variables for module access
-let game, cryptoModule, arcadeModule, burgerModule, bakeryModule, moduleManager;
+let game,
+  cryptoModule,
+  arcadeModule,
+  burgerModule,
+  cowModule,
+  bakeryModule,
+  moduleManager;
 
 // Initialize game when page loads
 window.onload = function () {
@@ -40,7 +46,9 @@ window.onload = function () {
   cryptoModule = moduleManager.getModule("crypto");
   arcadeModule = moduleManager.getModule("arcade");
   burgerModule = moduleManager.getModule("burger");
+  cowModule = moduleManager.getModule("cows");
   bakeryModule = moduleManager.getModule("bakery");
+  nftModule = moduleManager.getModule("nft");
 
   // Make game accessible globally
   window.game = game;
@@ -48,7 +56,9 @@ window.onload = function () {
   window.cryptoModule = cryptoModule;
   window.arcadeModule = arcadeModule;
   window.burgerModule = burgerModule;
+  window.cowModule = cowModule;
   window.bakeryModule = bakeryModule;
+  window.nftModule = nftModule;
   window.showNotification = showNotification;
 
   console.log("🎮 Modular Tycoon Game Initialized!");

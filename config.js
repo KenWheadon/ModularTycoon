@@ -56,7 +56,9 @@ const GAME_CONFIG = {
     CRYPTO: null, // Always unlocked
     ARCADE: { dollars: 50 },
     BURGER: { dollars: 200 },
+    COWS: { dollars: 300 },
     BAKERY: { dollars: 500 },
+    NFT: { dollars: 1000 },
   },
 
   // UI settings

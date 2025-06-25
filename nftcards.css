@@ -1,0 +1,496 @@
+/* NFT Cards Module Styles */
+
+/* NFT Shop */
+.nft-shop {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(138, 43, 226, 0.1);
+    border: 1px solid #8a2be2;
+    border-radius: 5px;
+}
+
+.nft-shop h3 {
+    color: #8a2be2;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.shop-actions {
+    display: grid;
+    gap: 10px;
+}
+
+.shop-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 5px;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.shop-action button {
+    background: #8a2be2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.shop-action button:hover {
+    background: #9932cc;
+}
+
+.shop-action button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.open-pack-btn {
+    animation: packGlow 2s infinite;
+}
+
+@keyframes packGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+    }
+}
+
+/* Card Collection */
+.card-collection {
+    margin-bottom: 20px;
+}
+
+.card-collection h3 {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.collection-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ff9f;
+    border: 1px solid #00ff9f;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8em;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #00ff9f;
+    color: #1a1a2e;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.empty-collection {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+    font-style: italic;
+    background: rgba(138, 43, 226, 0.1);
+    border: 2px dashed #8a2be2;
+    border-radius: 10px;
+}
+
+/* NFT Cards */
+.nft-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.nft-card.common {
+    border-color: #808080;
+}
+
+.nft-card.uncommon {
+    border-color: #32cd32;
+}
+
+.nft-card.rare {
+    border-color: #4169e1;
+}
+
+.nft-card.epic {
+    border-color: #9932cc;
+}
+
+.nft-card.legendary {
+    border-color: #ffd700;
+    animation: legendaryGlow 2s infinite;
+}
+
+@keyframes legendaryGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.card-header {
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #ffd93d;
+}
+
+.card-id {
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.card-value {
+    font-weight: bold;
+    color: #00ff9f;
+    margin-bottom: 10px;
+}
+
+.card-actions {
+    padding: 0 15px 15px;
+}
+
+.list-card-btn {
+    background: #00ff9f;
+    color: #1a1a2e;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    width: 100%;
+}
+
+.list-card-btn:hover {
+    background: #00e68a;
+}
+
+.list-card-btn:disabled {
+    background: #666;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Marketplace */
+.nft-marketplace {
+    margin-bottom: 20px;
+}
+
+.nft-marketplace h3 {
+    color: #ffd93d;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.marketplace-info {
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.marketplace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.empty-marketplace {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+    font-style: italic;
+    background: rgba(255, 215, 61, 0.1);
+    border: 2px dashed #ffd93d;
+    border-radius: 10px;
+}
+
+/* Marketplace Slots */
+.marketplace-slot {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffd93d;
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.marketplace-slot:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.listed-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-preview {
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-rarity-small {
+    font-size: 1.2em;
+    margin-bottom: 3px;
+}
+
+.card-name-small {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #ffd93d;
+}
+
+.card-listing-price {
+    font-size: 0.8em;
+    color: #00ff9f;
+    font-weight: bold;
+}
+
+/* Offer Section (reused from arcade) */
+.offer-section {
+    text-align: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.offer-amount {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px currentColor;
+}
+
+.offer-status {
+    margin-bottom: 8px;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.offer-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.accept-btn, .reject-btn {
+    padding: 4px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.accept-btn {
+    background: #00ff9f;
+    color: #1a1a2e;
+}
+
+.accept-btn:hover {
+    background: #00e68a;
+    transform: translateY(-1px);
+}
+
+.reject-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.reject-btn:hover {
+    background: #ff5252;
+    transform: translateY(-1px);
+}
+
+/* Waiting for Offer */
+.waiting-offer {
+    text-align: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.waiting-text {
+    opacity: 0.6;
+    font-style: italic;
+    margin-bottom: 8px;
+    animation: waitingPulse 2s infinite;
+}
+
+@keyframes waitingPulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+.remove-listing-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8em;
+}
+
+.remove-listing-btn:hover {
+    background: #ff5252;
+}
+
+/* Special Effects */
+.card-sold {
+    animation: cardSold 1s ease-out;
+}
+
+@keyframes cardSold {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.new-card {
+    animation: newCard 0.8s ease-out;
+}
+
+@keyframes newCard {
+    0% {
+        transform: scale(0) rotateY(180deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1) rotateY(90deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+    }
+    
+    .marketplace-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .collection-filter {
+        gap: 4px;
+    }
+    
+    .filter-btn {
+        padding: 3px 6px;
+        font-size: 0.7em;
+    }
+    
+    .shop-action {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .offer-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .accept-btn, .reject-btn {
+        width: 100%;
+    }
+}
+
+/* Rarity-specific hover effects */
+.nft-card.legendary:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+.nft-card.epic:hover {
+    box-shadow: 0 0 25px rgba(153, 50, 204, 0.5);
+}
+
+.nft-card.rare:hover {
+    box-shadow: 0 0 20px rgba(65, 105, 225, 0.4);
+}
+
+.nft-card.uncommon:hover {
+    box-shadow: 0 0 15px rgba(50, 205, 50, 0.3);
+}
+
+.nft-card.common:hover {
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.2);
+}

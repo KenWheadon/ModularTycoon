@@ -1,0 +1,369 @@
+/* Cow Farm Module Styles */
+
+/* Farm Management */
+.farm-management {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(34, 139, 34, 0.1);
+    border: 1px solid #228b22;
+    border-radius: 5px;
+}
+
+.farm-management h3 {
+    color: #228b22;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.farm-actions {
+    display: grid;
+    gap: 8px;
+}
+
+.farm-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(34, 139, 34, 0.1);
+    border-radius: 3px;
+    border: 1px solid rgba(34, 139, 34, 0.3);
+}
+
+.farm-action button {
+    background: #228b22;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.farm-action button:hover {
+    background: #32cd32;
+}
+
+.farm-action button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+/* Cow Pasture */
+.cow-pasture {
+    margin-bottom: 20px;
+}
+
+.cow-pasture h3 {
+    color: #8b4513;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cows-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.empty-pasture {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+    font-style: italic;
+    background: rgba(139, 69, 19, 0.1);
+    border: 2px dashed #8b4513;
+    border-radius: 10px;
+}
+
+/* Individual Cow Styles */
+.cow {
+    background: rgba(255, 248, 220, 0.1);
+    border: 2px solid #deb887;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(222, 184, 135, 0.3);
+}
+
+.cow-visual {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.cow-name {
+    font-weight: bold;
+    color: #8b4513;
+    margin-bottom: 8px;
+}
+
+.cow-status {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    min-height: 20px;
+}
+
+/* Cow State Specific Styles */
+.cow-idle {
+    border-color: #deb887;
+}
+
+.cow-eating {
+    border-color: #32cd32;
+    background: rgba(50, 205, 50, 0.1);
+}
+
+.cow-gassy {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.cow-ready_to_milk {
+    border-color: #87ceeb;
+    background: rgba(135, 206, 235, 0.1);
+}
+
+.cow-being_milked {
+    border-color: #4169e1;
+    background: rgba(65, 105, 225, 0.1);
+}
+
+.cow-cooldown {
+    border-color: #696969;
+    background: rgba(105, 105, 105, 0.1);
+    opacity: 0.7;
+}
+
+/* Cow Animations */
+.eating-animation .cow-visual {
+    animation: eating 2s infinite;
+}
+
+@keyframes eating {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.gassy-animation {
+    animation: gassyShake 0.5s infinite;
+}
+
+@keyframes gassyShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.ready-milk-animation .cow-visual {
+    animation: readyMilk 1.5s infinite;
+}
+
+@keyframes readyMilk {
+    0%, 100% { 
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% { 
+        transform: scale(1.02);
+        filter: brightness(1.2);
+    }
+}
+
+.milking-animation .cow-visual {
+    animation: milking 0.8s infinite;
+}
+
+@keyframes milking {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Action Buttons */
+.feed-cow-btn {
+    background: #32cd32;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.feed-cow-btn:hover {
+    background: #228b22;
+}
+
+.feed-cow-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.gas-release-btn {
+    background: #ffd700;
+    color: #8b4513;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9em;
+    font-weight: bold;
+    animation: gasButton 1s infinite;
+}
+
+@keyframes gasButton {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.gas-release-btn:hover {
+    background: #ffed4e;
+}
+
+.milk-btn {
+    background: #87ceeb;
+    color: #000080;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    user-select: none;
+}
+
+.milk-btn:hover {
+    background: #b0e0e6;
+}
+
+.milk-btn:active {
+    background: #4169e1;
+    color: white;
+    transform: scale(0.98);
+}
+
+/* Progress Bars */
+.eat-progress, .milk-progress, .cooldown-progress {
+    background: rgba(0, 0, 0, 0.2);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.eat-progress .progress-bar {
+    background: linear-gradient(90deg, #32cd32, #228b22);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.milk-progress .progress-bar {
+    background: linear-gradient(90deg, #87ceeb, #4169e1);
+    height: 100%;
+    transition: width 0.1s ease;
+}
+
+.cooldown-progress .progress-bar {
+    background: linear-gradient(90deg, #696969, #deb887);
+    height: 100%;
+    transition: width 1s ease;
+}
+
+/* Gas Counter */
+.gas-counter {
+    margin-top: 5px;
+    font-size: 1.2em;
+}
+
+/* Milk Level */
+.milk-level {
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #4169e1;
+}
+
+/* Special Effects */
+.cow.gas-release {
+    animation: gasRelease 0.5s ease-out;
+}
+
+@keyframes gasRelease {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.cow.milk-complete {
+    animation: milkComplete 1s ease-out;
+}
+
+@keyframes milkComplete {
+    0% { 
+        transform: scale(1);
+        background: rgba(135, 206, 235, 0.1);
+    }
+    50% { 
+        transform: scale(1.05);
+        background: rgba(135, 206, 235, 0.3);
+    }
+    100% { 
+        transform: scale(1);
+        background: rgba(135, 206, 235, 0.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cows-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+    }
+    
+    .cow {
+        padding: 10px;
+    }
+    
+    .cow-visual {
+        font-size: 2.5em;
+    }
+    
+    .farm-action {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .milk-btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+    .gas-release-btn, .milk-btn, .feed-cow-btn {
+        padding: 12px 20px;
+        font-size: 1em;
+        touch-action: manipulation;
+    }
+}
